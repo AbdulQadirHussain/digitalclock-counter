@@ -1,25 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+
+// WITHOUT HOOK ITS UNABLE TO INCREMENT NUMBER ON FE 
+// let count = 0;
+// const incNum = () => {
+//   count++;
+//   console.log('clicked ' + count)
+// }
+
+
+
+const App = () => {
+
+  let stateHook = useState();
+  console.log(stateHook);
+  const [curCount, setCount] = useState(0);
+  
+const incNum = () => {
+  setCount(curCount + 1);
+  console.log('clicked ' + curCount)
 }
 
-export default App;
+  return (
+    <>
+     <h1> {curCount} </h1>
+     <button onClick={incNum}> Click Here</button> 
+    </>
+  )
+}
+
+export default App
+
+
+
+
+
+
+// Destructuring
+// const name = ['vi', 'di', 'ci'];
+// const [v,d,c] = name;
+// console.log(c);
