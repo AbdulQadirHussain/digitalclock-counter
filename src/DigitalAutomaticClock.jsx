@@ -1,19 +1,21 @@
 import React, { useState } from 'react'
 
 const DigitalAutomaticClock = () => {
-    let nTime = new Date().toLocaleTimeString();
-    const [cTime, setTime] = useState(nTime);
-    
-    const UTime = () => {
-        nTime = new Date().toLocaleTimeString();
-        setTime(nTime)
-    }
+  
+  let Time = new Date().toLocaleTimeString();
+  
+  const [curTime, setTime] = useState(Time);
+  
+  const updateTimeAutomatically = () => {
+    Time = new Date().toLocaleTimeString();
+    setTime(Time);
+  }
 
-    setInterval(UTime, 1000);
+    setInterval(updateTimeAutomatically, 1000);
 
-    return (
+  return (
     <>
-     <h1 className='updateAutomatically'> {cTime} </h1> 
+     <h1 className='updateAutomatically'> {Time} </h1> 
     </>
   )
 }

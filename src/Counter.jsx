@@ -1,18 +1,19 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 
 const Counter = () => {
-  const [currentCount, setCount] = useState(0);
+  const [num, setNum] = useState(0);
   
-  const Increment = () => {
-    setCount(currentCount +1)
-  }
+  const IncrementNum = () => {
+    console.log("clicked")
+    setNum(num + 1)
+  } 
 
   return (
     <>
-     <h1> {currentCount} </h1>
-     <button onClick={Increment}> Click here </button>
+    <h1> {num} </h1>
+    <button onClick={IncrementNum}> Click </button>
     </>
-  )
+  ) 
 }
 
 export default Counter
